@@ -1,0 +1,46 @@
+
+
+
+MA PDU session establish -> PCF -> MA control policy -> communication between UE and UPF
+MA control polifcy -> SMF -> generate steering policy for UE and UPF
+
+what is in the steering rules
+Rule identity
+Rule precedence
+Traffic descriptor
+        application identity : com.example.app1
+        porotocol : TCP
+Access steering descriptor
+        steering functionality : MPTCP
+        steering mode : Load bal
+        Steering mode info : 50 percent over 3gpp and 50 percent over non-3gpp
+        threshold values : max-RTT = 20us
+
+
+for TCP flows -> MPTCP
+non TCP flows(UDP) -> ATSSS-LL(does not apply multi path protocol only scheduler sends packet to one of the two accesses)
+
+ATSSS-LL 
+layer-2 multi-access mechanism
+ethernet type PDU session - only mechanism in ATSSS (MAC layer PDU)
+if PDU is IPv4/IPv6 - ATSSS-LL complements MPTCP (Network layer PDU)
+
+Rules are based on Policy measurement function(PMF) policy
+RomARS is at present performing R&D activities in this topic
+https://romars.tech/en/project/vibes/ -> QUIC tunnels
+
+MPQSF - Multi-Path QUIC(MPQUIC) Steering Functionality
+
+1. establish MA PDU session
+2. now UE establishes one or more QUIC connections with UPF -> each with diff QoS requirement
+
+MPQSF in UE has two IP address one for each access type - given during PDU session - while UPF MPQSF has only one(MPQUIC proxy IP)
+
+Components of MPQSF
+QoS flow selection and steering mode selection
+        establishment of QUIC connections after establishment of 
+
+
+
+
+
